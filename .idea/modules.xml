@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SBR.iml" filepath="$PROJECT_DIR$/.idea/SBR.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sbrcode/sbr.iml" filepath="$PROJECT_DIR$/sbrcode/sbr.iml" />
-    </modules>
-  </component>
-</project>
