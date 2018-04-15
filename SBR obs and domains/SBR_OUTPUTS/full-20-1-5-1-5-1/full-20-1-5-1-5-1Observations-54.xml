@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Root SYSTEM "roles.dtd">
+<Root>
+  <expRoot>
+    <B6>
+      <B1>
+        <A12/>
+      </B1>
+      <B2>
+        <A7/>
+      </B2>
+      <B3>
+        <A11/>
+      </B3>
+      <B4>
+        <A3/>
+      </B4>
+      <B5>
+        <A14/>
+      </B5>
+    </B6>
+  </expRoot>
+</Root>
