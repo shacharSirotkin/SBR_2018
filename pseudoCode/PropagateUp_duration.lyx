@@ -97,7 +97,7 @@ v ← w
 \end_layout
 
 \begin_layout Enumerate
-while v ≠root(g) ∧ propageteUpSuccess ∧ ¬HardTagged(v,t) do
+while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do /// TODO: ROOT NEVER TAGGED!
 \end_layout
 
 \begin_deeper
@@ -107,7 +107,7 @@ if calcDuration(v,t) < maxDuration(v) then
 
 \begin_deeper
 \begin_layout Enumerate
-if isConsistent(v,t) then // TODO: Which isConsistent
+if isConsistent(v,t) then //BASIC isConsistent
 \end_layout
 
 \begin_deeper
@@ -117,7 +117,7 @@ if calcDuration(v,t) < minDuration(v) then
 
 \begin_deeper
 \begin_layout Enumerate
-SoftTag(v,t)
+softTagged(v,t) ← true
 \end_layout
 
 \end_deeper
@@ -127,9 +127,10 @@ else
 
 \begin_deeper
 \begin_layout Enumerate
-HardTag(v,t)
+taggd(v,t) ← true
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Tagged ← Tagged ∪ {v}
 \end_layout
@@ -139,6 +140,16 @@ v ← parent(v)
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+else
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Success ← false
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 else
@@ -146,24 +157,13 @@ else
 
 \begin_deeper
 \begin_layout Enumerate
-propageteUpSuccess ← false
+Success ← false
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-else
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-propageteUpSuccess ← false
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-if ¬propageteUpSuccess then
+if ¬Success then
 \end_layout
 
 \begin_deeper
@@ -173,7 +173,11 @@ for all a ∈ Tagged do
 
 \begin_deeper
 \begin_layout Enumerate
-deleteTag(a,t)
+tagged(a,t) ← false
+\end_layout
+
+\begin_layout Enumerate
+softTagged ← false
 \end_layout
 
 \end_deeper

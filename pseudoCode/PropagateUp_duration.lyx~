@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm3 isConsistent_noSelfCycle(node v, TimeStamp t)
+Algorithm2 PropagateUP_duration(Node w, PlanLibrary g, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -85,24 +85,98 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-if tagged(parent(v),t) then //// TODO: PLEASE CHECK
+Tagged ← Ø
+\end_layout
+
+\begin_layout Enumerate
+propageteUpSuccess ← true
+\end_layout
+
+\begin_layout Enumerate
+v ← w
+\end_layout
+
+\begin_layout Enumerate
+while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do /// TODO: ROOT NEVER TAGGED!
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-if (∃w ∈ prev(v) ∧ tagged(w,t-1)) ∨ first(v) then 
+if calcDuration(v,t) < maxDuration(v) then
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-return true
+if isConsistent(v,t) then //BASIC isConsistent
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+if calcDuration(v,t) < minDuration(v) then
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+softTagged(v,t) ← true
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+else
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+taggd(v,t) ← true
+\end_layout
+
+\begin_layout Enumerate
+Tagged ← Tagged ∪ {v}
+\end_layout
+
+\begin_layout Enumerate
+v ← parent(v)
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-return false
+else
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+Success ← false
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+else
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Success ← false
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+if ¬Success then
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+for all a ∈ Tagged do
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+tagged(a,t)←false
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_body
 \end_document

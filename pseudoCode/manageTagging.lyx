@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm3 isConsistent_noSelfCycle(node v, TimeStamp t)
+Algorithm4 manageTagging(Node v, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -77,7 +77,7 @@ Algorithm3 isConsistent_noSelfCycle(node v, TimeStamp t)
 LatexCommand rule
 offset "0.5ex"
 width "100col%"
-height "0.4pt"
+height "1pt"
 
 \end_inset
 
@@ -85,24 +85,32 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-if tagged(parent(v),t) then //// TODO: PLEASE CHECK
+if isConsistent(v,t) then
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-if (∃w ∈ prev(v) ∧ tagged(w,t-1)) ∨ first(v) then 
+tagged(v,t)←true
+\end_layout
+
+\begin_layout Enumerate
+Tagged ← Tagged U {v}
+\end_layout
+
+\begin_layout Enumerate
+return (parent(v), true)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+else
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-return true
+return (v, false)
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Enumerate
-return false
-\end_layout
-
 \end_body
 \end_document

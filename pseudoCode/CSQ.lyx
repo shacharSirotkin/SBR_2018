@@ -99,7 +99,7 @@ for all v ∈ M do
 
 \begin_deeper
 \begin_layout Enumerate
-while tagged(v,t) ∧ ¬∃TaggedChild(t) do
+while tagged(v,t) ∧ ∃w∈ Child(t) ∧ ¬tagged(w,t) do
 \end_layout
 
 \begin_deeper

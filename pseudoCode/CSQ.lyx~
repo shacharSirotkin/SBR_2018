@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm3 isConsistent_noSelfCycle(node v, TimeStamp t)
+Algorithm1 CurrentStateQuery(Matching M, PlanLibrary g, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -85,24 +85,34 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-if tagged(parent(v),t) then //// TODO: PLEASE CHECK
+for all v ∈ M do
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-if (∃w ∈ prev(v) ∧ tagged(w,t-1)) ∨ first(v) then 
+PropagateUp(v,g,t)
+\end_layout
+
+\begin_layout Enumerate
+for all v ∈ M do 
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-return true
+while tagged(v,t) ∧ ¬∃TaggedChild(t) do
 \end_layout
 
-\end_deeper
-\end_deeper
+\begin_deeper
 \begin_layout Enumerate
-return false
+deleteTag(v,t)
 \end_layout
 
+\begin_layout Enumerate
+v ← parent(v)
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
 \end_body
 \end_document
