@@ -85,7 +85,7 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-if tagged(parent(v),t) then // TODO: REALLY?
+if tagged(parent(v),t) then //// TODO: PLEASE CHECK
 \end_layout
 
 \begin_deeper

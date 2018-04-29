@@ -97,7 +97,7 @@ v ← w
 \end_layout
 
 \begin_layout Enumerate
-while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do /// TODO: ROOT NEVER TAGGED!
+while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do
 \end_layout
 
 \begin_deeper

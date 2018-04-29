@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm2 PropagateUP_generic(Node w, PlanLibrary g, TimeStamp t)
+Algorithm2 PropagateUP(Node w, PlanLibrary g, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -102,9 +102,33 @@ while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do /// TODO: ROOT NEVER TAGGED!
 
 \begin_deeper
 \begin_layout Enumerate
-(v, Success) ← manageTagging(v,t)
+if isConsistent(v,t) then
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+tagged(v,t)←true
+\end_layout
+
+\begin_layout Enumerate
+Tagged ← Tagged U {v}
+\end_layout
+
+\begin_layout Enumerate
+v ← parent(v)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+else
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Success ← false
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 if ¬Success then
@@ -118,10 +142,6 @@ for all a ∈ Tagged do
 \begin_deeper
 \begin_layout Enumerate
 tagged(a,t)←false
-\end_layout
-
-\begin_layout Enumerate
-softTagged ← false
 \end_layout
 
 \end_deeper

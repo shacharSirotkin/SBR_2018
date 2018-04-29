@@ -130,6 +130,7 @@ else
 taggd(v,t) ← true
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Tagged ← Tagged ∪ {v}
 \end_layout
@@ -138,7 +139,6 @@ Tagged ← Tagged ∪ {v}
 v ← parent(v)
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 else
@@ -173,7 +173,11 @@ for all a ∈ Tagged do
 
 \begin_deeper
 \begin_layout Enumerate
-tagged(a,t)←false
+tagged(a,t) ← false
+\end_layout
+
+\begin_layout Enumerate
+softTagged ← false
 \end_layout
 
 \end_deeper

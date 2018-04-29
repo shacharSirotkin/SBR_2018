@@ -86,11 +86,6 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-if tagged(parent(v),t) then //// TODO: PLEASE CHECK
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
 if tagged(v, t-1)∨ first(v) ∨ (∃w ∈ prev(v) ∧ (tagged(w,t-1) ∨ tagged(w,
  lastTimeStamp(firstSequential(v))) then 
 \end_layout
@@ -100,7 +95,6 @@ if tagged(v, t-1)∨ first(v) ∨ (∃w ∈ prev(v) ∧ (tagged(w,t-1) ∨ tagge
 return true
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 return false

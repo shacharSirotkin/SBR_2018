@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm2 PropagateUP_generic(Node w, PlanLibrary g, TimeStamp t)
+Algorithm3 isConsistent(node v, TimeStamp t) /// BASIC
 \end_layout
 
 \begin_layout Standard
@@ -85,46 +85,24 @@ height "0.4pt"
 \end_layout
 
 \begin_layout Enumerate
-Tagged ← Ø
-\end_layout
-
-\begin_layout Enumerate
-Success ← true
-\end_layout
-
-\begin_layout Enumerate
-v ← w
-\end_layout
-
-\begin_layout Enumerate
-while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do /// TODO: ROOT NEVER TAGGED!
+if tagged(parent(v),t) then //// TODO: PLEASE CHECK
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-(v, Success) ← manageTagging(v,t)
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-if ¬Success then
+if tagged(v, t-1) ∨ (∃w ∈ prev(v) ∧ tagged(w,t-1)) ∨ first(v) then 
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-for all a ∈ Tagged do
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-tagged(a,t)←false
-\end_layout
-
-\begin_layout Enumerate
-softTagged ← false
+return true
 \end_layout
 
 \end_deeper
 \end_deeper
+\begin_layout Enumerate
+return false
+\end_layout
+
 \end_body
 \end_document
