@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm2 PropagateUP_generic(Node w, PlanLibrary g, TimeStamp t)
+Algorithm2 PropagateUP_generic(Node w, PlanLibrary L, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -97,7 +97,7 @@ v ← w
 \end_layout
 
 \begin_layout Enumerate
-while v ≠root(g) ∧ Success ∧ ¬tagged(v,t) do
+while v ≠root(L) ∧ Success ∧ ¬tagged(v,t) do
 \end_layout
 
 \begin_deeper

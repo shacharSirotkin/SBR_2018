@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm4 manageTagging(Node v, TimeStamp t)
+Algorithm4 manageTagging(Node v, TimeStamp t) //BASIC
 \end_layout
 
 \begin_layout Standard
@@ -85,7 +85,7 @@ height "1pt"
 \end_layout
 
 \begin_layout Enumerate
-if isConsistent(v,t) then
+if isConsistent(v,t) then // can work with every implementation of isConsistent
 \end_layout
 
 \begin_deeper

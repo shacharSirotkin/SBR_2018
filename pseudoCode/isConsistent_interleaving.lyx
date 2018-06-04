@@ -87,7 +87,7 @@ height "0.4pt"
 
 \begin_layout Enumerate
 if tagged(v, t-1)∨ first(v) ∨ (∃w ∈ prev(v) ∧ (tagged(w,t-1) ∨ tagged(w,
- lastTimeStamp(firstSequential(v))) then 
+ lastTimeStamp(firstSequential(v))))) then 
 \end_layout
 
 \begin_deeper

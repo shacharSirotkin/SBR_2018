@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<PL>
+	<Letters>
+		<Non-Terminals>
+			<Letter id="B1" name="B1" />
+			<Letter id="B2" name="B2" />
+			<Letter id="B3" name="B3" />
+			<Letter id="B4" name="B4" />
+			<Letter id="B5" name="B5" />
+			<Letter goal="yes" id="B6" name="B6" />
+			<Letter id="B7" name="B7" />
+			<Letter id="B8" name="B8" />
+			<Letter id="B9" name="B9" />
+			<Letter id="B10" name="B10" />
+			<Letter id="B11" name="B11" />
+			<Letter goal="yes" id="B12" name="B12" />
+			<Letter id="B13" name="B13" />
+			<Letter id="B14" name="B14" />
+			<Letter id="B15" name="B15" />
+			<Letter id="B16" name="B16" />
+			<Letter id="B17" name="B17" />
+			<Letter goal="yes" id="B18" name="B18" />
+			<Letter id="B19" name="B19" />
+			<Letter id="B20" name="B20" />
+			<Letter id="B21" name="B21" />
+			<Letter id="B22" name="B22" />
+			<Letter id="B23" name="B23" />
+			<Letter goal="yes" id="B24" name="B24" />
+			<Letter id="B25" name="B25" />
+			<Letter id="B26" name="B26" />
+			<Letter id="B27" name="B27" />
+			<Letter id="B28" name="B28" />
+			<Letter id="B29" name="B29" />
+			<Letter goal="yes" id="B30" name="B30" />
+		</Non-Terminals>
+		<Terminals>
+			<Letter id="A1" name="A1" />
+			<Letter id="A2" name="A2" />
+			<Letter id="A3" name="A3" />
+			<Letter id="A4" name="A4" />
+			<Letter id="A5" name="A5" />
+			<Letter id="A6" name="A6" />
+			<Letter id="A7" name="A7" />
+			<Letter id="A8" name="A8" />
+			<Letter id="A9" name="A9" />
+			<Letter id="A10" name="A10" />
+			<Letter id="A11" name="A11" />
+			<Letter id="A12" name="A12" />
+			<Letter id="A13" name="A13" />
+			<Letter id="A14" name="A14" />
+			<Letter id="A15" name="A15" />
+			<Letter id="A16" name="A16" />
+			<Letter id="A17" name="A17" />
+			<Letter id="A18" name="A18" />
+			<Letter id="A19" name="A19" />
+			<Letter id="A20" name="A20" />
+			<Letter id="A21" name="A21" />
+			<Letter id="A22" name="A22" />
+			<Letter id="A23" name="A23" />
+			<Letter id="A24" name="A24" />
+			<Letter id="A25" name="A25" />
+			<Letter id="A26" name="A26" />
+			<Letter id="A27" name="A27" />
+			<Letter id="A28" name="A28" />
+			<Letter id="A29" name="A29" />
+			<Letter id="A30" name="A30" />
+			<Letter id="A31" name="A31" />
+			<Letter id="A32" name="A32" />
+			<Letter id="A33" name="A33" />
+			<Letter id="A34" name="A34" />
+			<Letter id="A35" name="A35" />
+			<Letter id="A36" name="A36" />
+			<Letter id="A37" name="A37" />
+			<Letter id="A38" name="A38" />
+			<Letter id="A39" name="A39" />
+			<Letter id="A40" name="A40" />
+			<Letter id="A41" name="A41" />
+			<Letter id="A42" name="A42" />
+			<Letter id="A43" name="A43" />
+			<Letter id="A44" name="A44" />
+			<Letter id="A45" name="A45" />
+			<Letter id="A46" name="A46" />
+			<Letter id="A47" name="A47" />
+			<Letter id="A48" name="A48" />
+			<Letter id="A49" name="A49" />
+			<Letter id="A50" name="A50" />
+			<Letter id="A51" name="A51" />
+			<Letter id="A52" name="A52" />
+			<Letter id="A53" name="A53" />
+			<Letter id="A54" name="A54" />
+			<Letter id="A55" name="A55" />
+			<Letter id="A56" name="A56" />
+			<Letter id="A57" name="A57" />
+			<Letter id="A58" name="A58" />
+			<Letter id="A59" name="A59" />
+			<Letter id="A60" name="A60" />
+			<Letter id="A61" name="A61" />
+			<Letter id="A62" name="A62" />
+			<Letter id="A63" name="A63" />
+			<Letter id="A64" name="A64" />
+			<Letter id="A65" name="A65" />
+			<Letter id="A66" name="A66" />
+			<Letter id="A67" name="A67" />
+			<Letter id="A68" name="A68" />
+			<Letter id="A69" name="A69" />
+			<Letter id="A70" name="A70" />
+			<Letter id="A71" name="A71" />
+			<Letter id="A72" name="A72" />
+			<Letter id="A73" name="A73" />
+			<Letter id="A74" name="A74" />
+			<Letter id="A75" name="A75" />
+			<Letter id="A76" name="A76" />
+			<Letter id="A77" name="A77" />
+			<Letter id="A78" name="A78" />
+			<Letter id="A79" name="A79" />
+			<Letter id="A80" name="A80" />
+			<Letter id="A81" name="A81" />
+			<Letter id="A82" name="A82" />
+			<Letter id="A83" name="A83" />
+			<Letter id="A84" name="A84" />
+			<Letter id="A85" name="A85" />
+			<Letter id="A86" name="A86" />
+			<Letter id="A87" name="A87" />
+			<Letter id="A88" name="A88" />
+			<Letter id="A89" name="A89" />
+			<Letter id="A90" name="A90" />
+			<Letter id="A91" name="A91" />
+			<Letter id="A92" name="A92" />
+			<Letter id="A93" name="A93" />
+			<Letter id="A94" name="A94" />
+			<Letter id="A95" name="A95" />
+			<Letter id="A96" name="A96" />
+			<Letter id="A97" name="A97" />
+			<Letter id="A98" name="A98" />
+			<Letter id="A99" name="A99" />
+			<Letter id="A100" name="A100" />
+		</Terminals>
+	</Letters>
+	<Recipes>
+		<Recipe lhs="B1" prob="0.1">
+			<Letter id="A7" index="1" />
+		</Recipe>
+		<Recipe lhs="B2" prob="0.1">
+			<Letter id="A20" index="1" />
+		</Recipe>
+		<Recipe lhs="B3" prob="0.1">
+			<Letter id="A16" index="1" />
+		</Recipe>
+		<Recipe lhs="B4" prob="0.1">
+			<Letter id="A3" index="1" />
+		</Recipe>
+		<Recipe lhs="B5" prob="0.1">
+			<Letter id="A14" index="1" />
+		</Recipe>
+		<Recipe lhs="B6" prob="0.1">
+			<Order>
+				<OrderCons firstIndex="1" secondIndex="2" />
+				<OrderCons firstIndex="2" secondIndex="3" />
+				<OrderCons firstIndex="3" secondIndex="4" />
+				<OrderCons firstIndex="4" secondIndex="5" />
+			</Order>
+			<Letter id="B1" index="1" />
+			<Letter id="B2" index="2" />
+			<Letter id="B3" index="3" />
+			<Letter id="B4" index="4" />
+			<Letter id="B5" index="5" />
+		</Recipe>
+		<Recipe lhs="B7" prob="0.1">
+			<Letter id="A12" index="1" />
+		</Recipe>
+		<Recipe lhs="B8" prob="0.1">
+			<Letter id="A7" index="1" />
+		</Recipe>
+		<Recipe lhs="B9" prob="0.1">
+			<Letter id="A9" index="1" />
+		</Recipe>
+		<Recipe lhs="B10" prob="0.1">
+			<Letter id="A7" index="1" />
+		</Recipe>
+		<Recipe lhs="B11" prob="0.1">
+			<Letter id="A5" index="1" />
+		</Recipe>
+		<Recipe lhs="B12" prob="0.1">
+			<Order>
+				<OrderCons firstIndex="1" secondIndex="2" />
+				<OrderCons firstIndex="2" secondIndex="3" />
+				<OrderCons firstIndex="3" secondIndex="4" />
+				<OrderCons firstIndex="4" secondIndex="5" />
+			</Order>
+			<Letter id="B7" index="1" />
+			<Letter id="B8" index="2" />
+			<Letter id="B9" index="3" />
+			<Letter id="B10" index="4" />
+			<Letter id="B11" index="5" />
+		</Recipe>
+		<Recipe lhs="B13" prob="0.1">
+			<Letter id="A17" index="1" />
+		</Recipe>
+		<Recipe lhs="B14" prob="0.1">
+			<Letter id="A13" index="1" />
+		</Recipe>
+		<Recipe lhs="B15" prob="0.1">
+			<Letter id="A4" index="1" />
+		</Recipe>
+		<Recipe lhs="B16" prob="0.1">
+			<Letter id="A7" index="1" />
+		</Recipe>
+		<Recipe lhs="B17" prob="0.1">
+			<Letter id="A8" index="1" />
+		</Recipe>
+		<Recipe lhs="B18" prob="0.1">
+			<Order>
+				<OrderCons firstIndex="1" secondIndex="2" />
+				<OrderCons firstIndex="2" secondIndex="3" />
+				<OrderCons firstIndex="3" secondIndex="4" />
+				<OrderCons firstIndex="4" secondIndex="5" />
+			</Order>
+			<Letter id="B13" index="1" />
+			<Letter id="B14" index="2" />
+			<Letter id="B15" index="3" />
+			<Letter id="B16" index="4" />
+			<Letter id="B17" index="5" />
+		</Recipe>
+		<Recipe lhs="B19" prob="0.1">
+			<Letter id="A16" index="1" />
+		</Recipe>
+		<Recipe lhs="B20" prob="0.1">
+			<Letter id="A16" index="1" />
+		</Recipe>
+		<Recipe lhs="B21" prob="0.1">
+			<Letter id="A18" index="1" />
+		</Recipe>
+		<Recipe lhs="B22" prob="0.1">
+			<Letter id="A13" index="1" />
+		</Recipe>
+		<Recipe lhs="B23" prob="0.1">
+			<Letter id="A10" index="1" />
+		</Recipe>
+		<Recipe lhs="B24" prob="0.1">
+			<Order>
+				<OrderCons firstIndex="1" secondIndex="2" />
+				<OrderCons firstIndex="2" secondIndex="3" />
+				<OrderCons firstIndex="3" secondIndex="4" />
+				<OrderCons firstIndex="4" secondIndex="5" />
+			</Order>
+			<Letter id="B19" index="1" />
+			<Letter id="B20" index="2" />
+			<Letter id="B21" index="3" />
+			<Letter id="B22" index="4" />
+			<Letter id="B23" index="5" />
+		</Recipe>
+		<Recipe lhs="B25" prob="0.1">
+			<Letter id="A19" index="1" />
+		</Recipe>
+		<Recipe lhs="B26" prob="0.1">
+			<Letter id="A1" index="1" />
+		</Recipe>
+		<Recipe lhs="B27" prob="0.1">
+			<Letter id="A19" index="1" />
+		</Recipe>
+		<Recipe lhs="B28" prob="0.1">
+			<Letter id="A10" index="1" />
+		</Recipe>
+		<Recipe lhs="B29" prob="0.1">
+			<Letter id="A8" index="1" />
+		</Recipe>
+		<Recipe lhs="B30" prob="0.1">
+			<Order>
+				<OrderCons firstIndex="1" secondIndex="2" />
+				<OrderCons firstIndex="2" secondIndex="3" />
+				<OrderCons firstIndex="3" secondIndex="4" />
+				<OrderCons firstIndex="4" secondIndex="5" />
+			</Order>
+			<Letter id="B25" index="1" />
+			<Letter id="B26" index="2" />
+			<Letter id="B27" index="3" />
+			<Letter id="B28" index="4" />
+			<Letter id="B29" index="5" />
+		</Recipe>
+	</Recipes>
+</PL>

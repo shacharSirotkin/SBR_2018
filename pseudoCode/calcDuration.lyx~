@@ -123,7 +123,7 @@ break
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-return(counter)
+return counter
 \end_layout
 
 \end_body

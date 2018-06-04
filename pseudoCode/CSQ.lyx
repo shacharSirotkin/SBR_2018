@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm1 CurrentStateQuery(Matching M, PlanLibrary g, TimeStamp t)
+Algorithm1 CurrentStateQuery(Matching M, PlanLibrary L, TimeStamp t)
 \end_layout
 
 \begin_layout Standard
@@ -90,7 +90,7 @@ for all v ∈ M do
 
 \begin_deeper
 \begin_layout Enumerate
-PropagateUp(v,g,t)
+PropagateUp(v,L,t)
 \end_layout
 
 \begin_layout Enumerate

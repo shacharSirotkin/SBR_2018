@@ -85,12 +85,12 @@ height "1pt"
 \end_layout
 
 \begin_layout Enumerate
-if calcDuration(v,t) < maxDuration(v) then
+if calcDuration(v,t) <= maxDuration(v) then
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-if isConsistent(v,t) then //BASIC isConsistent
+if isConsistent__selfCycle(v,t) then
 \end_layout
 
 \begin_deeper
@@ -103,10 +103,6 @@ if calcDuration(v,t) < minDuration(v) then
 softTagged(v,t) ← true
 \end_layout
 
-\begin_layout Enumerate
-// return (v, true)
-\end_layout
-
 \end_deeper
 \begin_layout Enumerate
 else
@@ -115,10 +111,6 @@ else
 \begin_deeper
 \begin_layout Enumerate
 tagged(v,t) ← true
-\end_layout
-
-\begin_layout Enumerate
-// return (parent(v), true)
 \end_layout
 
 \end_deeper

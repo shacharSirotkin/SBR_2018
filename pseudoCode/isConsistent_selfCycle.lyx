@@ -69,7 +69,7 @@
 \begin_body
 
 \begin_layout Standard
-Algorithm3 isConsistent_selfCycle(node v, TimeStamp t) /// BASIC
+Algorithm3 isConsistent_selfCycle(node v, TimeStamp t)
 \end_layout
 
 \begin_layout Standard

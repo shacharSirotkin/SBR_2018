@@ -25,16 +25,18 @@ domains = {1 : "full-20-1-5-1-2-3",
                7 : "1-5-2-3-4-full-100_or",
                8 : "1-5-2-5-2-full-100_and",
                9: "1-5-3-3-2-full-100_depth",
-               10: "temp"
+               # 10: "temp"
                }
 
-input_folder_name = "C:/Users/ranga/Desktop/PR/"
-output_folder_name = "C:/Users/ranga/Desktop/PR/SBR_OUTPUTS/"
+input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/standardization/"
+output_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/standardization/SBR_OUTPUTS/"
 
 all_obs = []
 
 def main():
     for domain_name in domains.keys():
+        if domain_name == 8:
+            pass
         if not os.path.exists(output_folder_name + domains[domain_name]):
             os.makedirs(output_folder_name + domains[domain_name])
         csv_file = open(output_folder_name + domains[domain_name] + "/" + domains[domain_name] + "profile - time - SBR.csv", "wb")

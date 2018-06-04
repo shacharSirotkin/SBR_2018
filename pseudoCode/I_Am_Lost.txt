@@ -4,4 +4,10 @@ About tagging the root, in the the basic article (ijcai05), it seems that the ro
 
 I split the propagateUp by coppying the functions' content. Sorry, my creativity approaches zero.
 
+
+
+
+
 Q: Does it right to propagate the tagging up when the tag was a Soft Tag? Should the propagatting up work only when the tag became a hard tag? Don't tagging node A with valid duration of 1 in propagating up from node B with valid duration of 3 would be mistake in the first two tags?
+
+A: Node A's duration must not be smaller than B's one. We can assume that this scenario would never happen.
