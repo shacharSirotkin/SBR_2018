@@ -1,11 +1,13 @@
+import os
 from os import listdir
 from os.path import isfile, join
-import CSQ
-import HSQ
-import Parser
-import PathNode
-import TreeNode
-import os
+
+import SymbolicPlanRecognition.CSQ as CSQ
+import SymbolicPlanRecognition.HSQ as HSQ
+import SymbolicPlanRecognition.Parser
+import SymbolicPlanRecognition.TreeNode
+
+import SymbolicPlanRecognition.PathNode
 
 os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 
@@ -22,8 +24,9 @@ domains = {
            # 9: "1-5-3-3-2-full-100_depth",
            }
 
-input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/standardization/"
-output_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/standardization/SBR_OUTPUTS/"
+
+input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/"
+output_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/SBR_OUTPUTS/"
 
 all_obs = []
 
@@ -41,7 +44,7 @@ def main():
             if file_name.endswith(".xml"):
                 csq = CSQ.CSQ()
                 h = HSQ.HSQ()
-                parser = Parser.Parser()
+                parser = SymbolicPlanRecognition.Parser.Parser()
                 run(file_name, file_name.replace("Domains", "Observations").replace("BaselineDomain", "Observations").replace(".xml", ".txt"), csq, h, parser)
 
 
@@ -62,9 +65,9 @@ def make_paths(leaves, tag):
     for p in leaves:
         new_parent = None
         if p.tagged(tag):
-            new_node = PathNode.PathNode(p)
+            new_node = SymbolicPlanRecognition.PathNode.PathNode(p)
             while p.parent() is not None:
-                new_parent = PathNode.PathNode(p.parent())
+                new_parent = SymbolicPlanRecognition.PathNode.PathNode(p.parent())
                 if not new_node.get_seq():
                     new_node.set_complete(True)
                 new_node.set_parent(new_parent)
@@ -77,9 +80,9 @@ def make_paths(leaves, tag):
 
 def read_obs_and_apply_CSQ(obs_file_name, plans, csq):
     all_tags = []
-    with open(obs_file_name) as f:
+    with open(obs_file_name) as obs_file:
         list_of_previous_tagged = []
-        for row in f:
+        for row in obs_file:
             if row != "\n":
                 ws = row.index(" ")
                 t = int(row[0:ws])
@@ -91,7 +94,7 @@ def read_obs_and_apply_CSQ(obs_file_name, plans, csq):
                 for tmp in plans:
                     if tmp.get_label() == label:
                         all_obs_current_tag.append(tmp)
-                list_of_previous_tagged = csq.csq(all_obs_current_tag, t, list_of_previous_tagged)
+                list_of_previous_tagged = csq.apply_csq(all_obs_current_tag, t, list_of_previous_tagged)
     return all_tags
 
 
@@ -123,9 +126,9 @@ def depth_of_PL(root):
 def unite_paths(all_exps, root):
     print len(all_exps)
     for exp in all_exps:
-        exp_root = TreeNode.TreeNode(1, "expRoot")
+        exp_root = SymbolicPlanRecognition.TreeNode.TreeNode(1, "expRoot")
         for tree in reversed(exp):
-            tree = HSQ.path_string_to_path_plan[tree]
+            tree = SymbolicPlanRecognition.HSQ.path_string_to_path_plan[tree]
             exp_root = unite_path_with_current(tree, exp_root)
         root.add_child(exp_root)
     return root
@@ -141,7 +144,7 @@ def unite_path_with_current(path1, root):
         if root_child is None or (path1_child is not None and root_child.get_label() != path1_child.get_label()) or \
                 (path1_child is not None and root_child.get_label() != path1_child.get_label() and (path1_child.get_ID() in root_child.get_seq())) or \
                 (path1_child is not None and str(path1_child) == str(root_child)):
-            root_child = root.add_child(TreeNode.TreeNode.get_from_path_node(path1_child))
+            root_child = root.add_child(SymbolicPlanRecognition.TreeNode.TreeNode.get_from_path_node(path1_child))
         root = root_child
         path1 = path1_child
     return root_to_return

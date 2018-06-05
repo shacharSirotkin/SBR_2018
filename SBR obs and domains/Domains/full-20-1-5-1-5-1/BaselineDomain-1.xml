@@ -200,10 +200,10 @@
 			<Letter id="A9" index="1" />
 		</Recipe>
 		<Recipe lhs="B15" prob="0.1">
-			<Letter id="A7" index="1" />
+			<Letter id="A11" index="1" />
 		</Recipe>
 		<Recipe lhs="B16" prob="0.1">
-			<Letter id="A12" index="1" />
+			<Letter id="A11" index="1" />
 		</Recipe>
 		<Recipe lhs="B17" prob="0.1">
 			<Letter id="A3" index="1" />

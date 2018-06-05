@@ -215,10 +215,10 @@
 			<Letter id="A9" index="1"/>
 		</Recipe>
 		<Recipe prob="0.1" lhs="B15">
-			<Letter id="A7" index="1"/>
+			<Letter id="A11" index="1"/>
 		</Recipe>
 		<Recipe prob="0.1" lhs="B16">
-			<Letter id="A12" index="1"/>
+			<Letter id="A11" index="1"/>
 		</Recipe>
 		<Recipe prob="0.1" lhs="B17">
 			<Letter id="A3" index="1"/>
