@@ -16,8 +16,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="CSQ.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+      <file leaf-file-name="CSQ_ran.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
@@ -40,17 +40,17 @@
         <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/IsConsistent.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state relative-caret-position="484">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -61,19 +61,19 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="616">
               <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main_ran.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main_ran.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main_ran.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="1606">
               <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -86,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/Node.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-64">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -104,8 +104,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSQ2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ2.py">
+      <file leaf-file-name="CSQ.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -464,12 +464,12 @@
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py</url>
+          <url>file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py</url>
           <line>9</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ2.py</url>
+          <url>file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py</url>
           <line>19</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
@@ -479,7 +479,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
@@ -551,7 +551,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -613,7 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
@@ -685,7 +685,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
@@ -842,7 +842,7 @@
     <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/Node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-64">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -865,7 +865,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ_ran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
@@ -873,7 +873,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ2.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/CSQ.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -881,10 +881,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main_ran.py">
+    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/IsConsistent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -893,26 +901,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="616">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SymbolicPlanRecognition/IsConsistent.py">
+    <entry file="file://$PROJECT_DIR$/Main_ran.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        <state relative-caret-position="1606">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

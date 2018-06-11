@@ -2,7 +2,7 @@ import os
 from os import listdir
 from os.path import isfile, join
 
-from SymbolicPlanRecognition.CSQ import CSQ
+from SymbolicPlanRecognition.CSQ_ran import CSQ
 import SymbolicPlanRecognition.HSQ as HSQ
 from SymbolicPlanRecognition.Parser import Parser
 from SymbolicPlanRecognition.TreeNode import TreeNode

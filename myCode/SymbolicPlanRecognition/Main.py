@@ -1,4 +1,4 @@
-from SymbolicPlanRecognition.CSQ2 import CSQ
+from SymbolicPlanRecognition.CSQ import CSQ
 from SymbolicPlanRecognition.HSQ import HSQ
 from SymbolicPlanRecognition.Matcher import Matcher
 from SymbolicPlanRecognition.Parser import Parser
