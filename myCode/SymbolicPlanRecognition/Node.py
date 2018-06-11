@@ -5,8 +5,8 @@ class Node(object):
         self._id = ID
         self._is_complete = is_complete
         self._tags = tags
-        self._seq_of = seq_of
-        self._seq = seq
+        self._prev_seqs = seq_of
+        self._next_seqs = seq
 
     def root(self):
         return self._is_root
@@ -21,11 +21,11 @@ class Node(object):
         return t in self._tags
 
     def is_first(self):
-        return self._seq_of == []
+        return self._prev_seqs == []
 
     def add_seq_of(self, ID, p):
-        self._seq_of.append(ID)
-        p._seq.append(self._id)
+        self._prev_seqs.append(ID)
+        p._next_seqs.append(self._id)
 
     def get_label(self):
         return self._label
@@ -33,11 +33,11 @@ class Node(object):
     def set_root(self, is_root):
         self._is_root = is_root
 
-    def get_seq(self):
-        return self._seq
+    def get_next_seqs(self):
+        return self._next_seqs
 
     def get_seq_of(self):
-        return self._seq_of
+        return self._prev_seqs
 
     def set_complete(self, complete):
         self._is_complete = complete

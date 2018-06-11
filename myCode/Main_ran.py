@@ -2,9 +2,12 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+from SymbolicPlanRecognition.CSQ import CSQ
 import SymbolicPlanRecognition.HSQ as HSQ
-from SymbolicPlanRecognition.Main import SymbolicPlanRecognition
+from SymbolicPlanRecognition.Parser import Parser
 from SymbolicPlanRecognition.TreeNode import TreeNode
+import SymbolicPlanRecognition.PathNode as PathNode
+
 os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 
 '''and "Domain-18." in file_name:'''
@@ -24,6 +27,8 @@ domains = {
 input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/"
 output_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/SBR_OUTPUTS/"
 
+all_obs = []
+
 
 def main():
     for domain_name in domains.keys():
@@ -34,36 +39,88 @@ def main():
         onlyfiles = [join(input_folder_name + "Domains/" + domains[domain_name] + "/", f.replace("\\", "/")) for f in
                      listdir(input_folder_name + "Domains/" + domains[domain_name] + "/")
                      if isfile(join(input_folder_name + "Domains/" + domains[domain_name] + "/", f))]
-        for domain_file in onlyfiles:
-            print domain_file
-            if domain_file.endswith(".xml"):
-                plan_recognizer = SymbolicPlanRecognition(domain_file)
-                obs_file = domain_file.replace("Domains", "Observations").replace("BaselineDomain", "Observations").\
-                    replace(".xml", ".txt")
-                run(plan_recognizer, obs_file)
+        for file_name in onlyfiles:
+            print file_name
+            if file_name.endswith(".xml"):
+                csq = CSQ()
+                h = HSQ.HSQ()
+                parser = Parser()
+                run(file_name, file_name.replace("Domains", "Observations").replace("BaselineDomain", "Observations").
+                    replace(".xml", ".txt"), csq, h, parser)
 
 
-def run(plan_recognizer, obs_file_name):
+def run(domain_file_name, obs_file_name, csq, h, parser):
+    root = parser.parse(domain_file_name)
 
-    read_obs_and_apply_csq(obs_file_name, plan_recognizer)
+    # get any node in the plan library
+    plans = root.search()
 
-    all_paths = plan_recognizer.apply_hsq()
+    all_tags = read_obs_and_apply_csq(obs_file_name, plans, csq)
+
+    # for each tag create path from obs to root
+    map_of_paths = generate_paths_map(all_tags, root)
+
+    all_paths = h.apply_hsq(map_of_paths)
     print all_paths
 
     root = TreeNode(0, "Root")
     final_root = unite_paths(all_paths, root)
 
 
-def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
+def read_obs_and_apply_csq(obs_file_name, plans, csq):
+    all_tags = []
     with open(obs_file_name) as obs_file:
+        list_of_previous_tagged = []
         for row in obs_file:
             if row != "\n":
                 ws = row.index(" ")
                 t = int(row[0:ws])
+                all_tags.append(t)
                 label = row[ws + 1:]
                 label = label.replace("\r", "").replace("\n", "")
-                current_optional_obs = plan_recognizer.match(label)
-                plan_recognizer.apply_csq(current_optional_obs, t)
+                all_obs_current_tag = []
+                all_obs.append(label)
+                for plan_step in plans:
+                    if plan_step.get_label() == label:
+                        all_obs_current_tag.append(plan_step)
+                list_of_previous_tagged = csq.apply_csq(all_obs_current_tag, t, list_of_previous_tagged)
+    return all_tags
+
+
+# create map from time-stamps to paths of each tagged node to the root
+def generate_paths_map(all_tags, root):
+    map_of_paths = {}
+    for tag in all_tags:
+        for child in root.get_children():
+            if child.tagged(tag):
+                leaves = child.get_leaves()
+                paths = make_paths(leaves, tag)
+                if tag in map_of_paths.keys():
+                    map_of_paths[tag].extend(paths)
+                else:
+                    paths_to_put = paths
+                    map_of_paths[tag] = paths_to_put
+    print map_of_paths
+    return map_of_paths
+
+
+def make_paths(leaves, tag):
+    paths = []
+    for p in leaves:
+        new_parent = None
+        if p.tagged(tag):
+            new_node = PathNode.PathNode(p)
+            while p.parent() is not None:
+                new_parent = PathNode.PathNode(p.parent())
+                # if node has no next sequential nodes mark it as complete
+                if not new_node.get_next_seqs():
+                    new_node.set_complete(True)
+                new_node.set_parent(new_parent)
+                p = p.parent()
+                new_node = new_parent
+        if new_parent is not None:
+            paths.append(new_parent)
+    return paths
 
 
 def unite_paths(all_exps, root):

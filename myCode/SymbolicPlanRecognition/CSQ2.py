@@ -23,7 +23,7 @@ class CSQ(object):
         plans_to_remove = []
         propagate_up_success = True
         tagged = []
-        while (not w.root()) and propagate_up_success and (not w.tagged(t)):
+        while propagate_up_success and (not w.root()) and (not w.tagged(t)):
             w, propagate_up_success = self._tag_manager.manage_tag(w, t, all_tagged_previous_stage,
                                                                    all_tagged_this_stage, tagged)
         if not propagate_up_success:

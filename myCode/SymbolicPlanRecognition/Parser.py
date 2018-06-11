@@ -3,12 +3,16 @@ import xml.etree.ElementTree as et
 
 
 class Parser(object):
-    def __init__(self):
+    def __init__(self, interleaving=False):
         self._id_counter = 0
         self._hmap = {}
         self._goals = []
         self._recipes = []
         self._doc = None
+        if interleaving:
+            self._read_orders = self.read_interleaving_order_cons
+        else:
+            self._read_orders = self.read_order_cons
 
     def parse(self, path):
         root = TreeNode(self.generate_ID(), "root")
@@ -50,7 +54,7 @@ class Parser(object):
             p.add_child(child)
             self._hmap[letter.get("index")] = child
 
-    def read_order_cons(self, recipe):
+    def read_interleaving_order_cons(self, recipe):
         order = recipe.find("Order")
         if order is not None:
             order_conses = order.findall("OrderCons")
@@ -59,13 +63,13 @@ class Parser(object):
                 self._hmap[order_cons.get("secondIndex")].add_seq_of(p.get_ID(), p)
                 self._hmap[order_cons.get("secondIndex")].set_first_sequential(p.get_first_sequential())
 
-    # def read_order_cons(self, recipe):
-    #     order = recipe.find("Order")
-    #     if order != None:
-    #         order_conses = order.findall("OrderCons")
-    #         for order_cons in order_conses:
-    #             p = self._hmap[order_cons.get("firstIndex")]
-    #             self._hmap[order_cons.get("secondIndex")].add_seq_of(p.get_ID(), p)
+    def read_order_cons(self, recipe):
+        order = recipe.find("Order")
+        if order is not None:
+            order_conses = order.findall("OrderCons")
+            for order_cons in order_conses:
+                p = self._hmap[order_cons.get("firstIndex")]
+                self._hmap[order_cons.get("secondIndex")].add_seq_of(p.get_ID(), p)
 
     def generate_ID(self):
         self._id_counter += 1

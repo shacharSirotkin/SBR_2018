@@ -21,7 +21,7 @@ class TreeNode(Node):
         label = path_node.get_label()
         ID = path_node.get_ID()
         tags = copy.deepcopy(path_node.get_tags())
-        seq = path_node.get_seq()
+        seq = path_node.get_next_seqs()
         seq_of = path_node.get_seq_of()
         is_root = path_node.root()
         newone = TreeNode(ID, label, is_root=is_root, tags=tags, seq_of=seq_of, seq=seq)
@@ -84,7 +84,7 @@ class TreeNode(Node):
 
     def previous_seq_edge_tagged(self, all_tagged_previous_stage):
         for p in all_tagged_previous_stage:
-            if p._id in self._seq_of:
+            if p._id in self._prev_seqs:
                 return True
         return False
 
