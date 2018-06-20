@@ -21,7 +21,7 @@ class PathNode(Node):
             lst.extend(self._child.search())
         return lst
 
-    # return the depth where there is a node of the given path is prev_seq of node in this path
+    # return the depth where there is a node of the given path which is a prev_seq of node in this path
     def get_seq_child_depth(self, another_path):
         # get all nodes in both paths
         path1_nodes = another_path.search()

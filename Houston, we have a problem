@@ -1,0 +1,10 @@
+It seems that without self cycle there are a lot of problems due to nodes with low depth doesn't tagged because they have been tagged in last time stamp during the propagate up process. In the current propagate up, when the propagate up process get to these nodes while propageting up from sequential edge of the last tagged node they are already tagged with t-1 so the algo mark them as ilegal self cycle.
+
+Solution: For each node we will set a self cycle limitation based on its children's biggest self cycle limitation. The limit of the leaves will be 1 and for each node above them we will calulate how many nodes there are under it, include sequential and decomposing nodes. 
+
+
+Could be a situation where in the same PL some of the node would have a self cycle and some wouldn't?
+
+
+
+

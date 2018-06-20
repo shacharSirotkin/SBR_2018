@@ -9,8 +9,11 @@ class InterleavingTreeNode(TreeNode):
         self._first_sequential = None
         TreeNode.__init__(ID, label, parent, children, is_root, is_complete, tags, seq_of, seq)
 
-    def set_last_leaved_nodes(self, last_leaved_id):
-        self._last_leaved_node_id = last_leaved_id
+    def set_last_leaved_node(self, last_leaved_id):
+        if not self._first_sequential:
+            self._last_leaved_node_id = last_leaved_id
+        else:
+            self._first_sequential.set_last_leaved_node(last_leaved_id)
 
     def set_first_sequential(self, first):
         self._first_sequential = first

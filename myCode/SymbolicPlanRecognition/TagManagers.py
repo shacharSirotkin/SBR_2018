@@ -56,3 +56,21 @@ class DurationTagManager(object):
             else:
                 break
         return duration
+
+
+class InterleavingTagManager(object):
+    def __init__(self, self_cycle):
+        if not self_cycle:
+            self._is_consistent = isConsistent.interleaved
+        else:
+            self._is_consistent = isConsistent.self_cycle_interleaved
+
+    def manage_tag(self, node, time_stamp, all_tagged_previous_stage, all_tagged_this_stage, tagged):
+        if self._is_consistent(node, all_tagged_previous_stage, time_stamp):
+            node.tag(time_stamp)
+            node.set_last_leaved_node(node._id)
+            all_tagged_this_stage.append(node)
+            tagged.append(node)
+            return node.parent(), True
+        else:
+            return None, False

@@ -28,8 +28,6 @@ class SymbolicPlanRecognition(object):
         self._previous_tagged_nodes = self._csq.apply_csq(current_optional_obs, t, self._previous_tagged_nodes)
         return self._previous_tagged_nodes
 
-    def apply_multiple_csq(self):
-        pass
 
     def apply_hsq(self):
         # for each tag create path from obs to root

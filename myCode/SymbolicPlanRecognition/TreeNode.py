@@ -5,6 +5,7 @@ import copy
 class TreeNode(Node):
     def __init__(self, ID, label, parent=None, children=None, is_root=False,
                  is_complete=False, tags=None, seq_of=None, seq=None):
+        self._self_cycle_limitation = None
         self._parent = parent
         if not children:
             self._children = []
@@ -96,3 +97,6 @@ class TreeNode(Node):
             if p._label == s:
                 return p
         return None
+
+    def set_self_cycle_limitation(self, self_cycle_limitation):
+        self._self_cycle_limitation = self_cycle_limitation
