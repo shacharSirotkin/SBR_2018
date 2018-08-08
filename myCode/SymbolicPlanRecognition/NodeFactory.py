@@ -3,6 +3,14 @@ from InterleavingTreeNode import InterleavingTreeNode
 from TreeNode import TreeNode
 
 
+def create_node(ID, node_attributes):
+    if "maxDuration" in node_attributes:
+        return create_duration_tree_node(ID, node_attributes.get("id"), node_attributes.get("minDuration"),
+                                         node_attributes.get("maxDuration"))
+    else:
+        return create_tree_node(ID, node_attributes.get("id"))
+
+
 def create_tree_node(ID, label, parent=None, children=None, is_root=False,
                      is_complete=False, tags=None, seq_of=None, seq=None):
     return TreeNode(ID, label, parent, children, is_root, is_complete, tags, seq_of, seq)

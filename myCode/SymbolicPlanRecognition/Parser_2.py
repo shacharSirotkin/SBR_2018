@@ -10,7 +10,7 @@ class Parser(object):
         self._goals = []
         self._recipes = []
         self._doc = None
-        self._nodeCreator = node_creator
+        self._nodeFactory = node_creator
 
     def parse(self, path):
         root = TreeNode(self.generate_ID(), "root")
@@ -27,7 +27,8 @@ class Parser(object):
         for letter in non_terminal_letters:
             if letter.get("goal") == "yes":
                 self._goals.append(letter.get("id"))
-                p = self._nodeCreator(self.generate_ID(), letter.get("id"))
+                # TODO:this is the critical section. The node creator should create a node with the right properties
+                p = self._nodeFactory(self.generate_ID(), letter.get("id"))
                 root.add_child(p)
                 self._hmap[letter.get("index")] = p
 
@@ -53,8 +54,8 @@ class Parser(object):
     def read_single_recipe(self, recipe, p):
         letters = recipe.findall("Letter")
         for letter in letters:
-            ID = self.generate_ID()
-            child = TreeNode(ID, letter.get("id"))
+            id = self.generate_ID()
+            child = self._nodeFactory(self.generate_ID(), letter.get("id"))
             p.add_child(child)
             self._hmap[letter.get("index")] = child
 

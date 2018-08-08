@@ -18,7 +18,7 @@ class SymbolicPlanRecognition(object):
         self._previous_tagged_nodes = []
         self._parser = Parser(interleaving)
         self._root = self.parse(domain_file)
-        # get any node in the plan library
+        # get list of any node in the plan library
         self._plans = self._root.search()
         self._matcher = Matcher(self._root)
         self._all_tags =[]

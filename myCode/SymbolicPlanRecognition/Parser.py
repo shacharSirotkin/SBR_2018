@@ -96,17 +96,27 @@ class Parser(object):
         return self._id_counter
 
     def _set_all_self_cycles(self, root):
-        children = root.get_children()
         next_seqs = root.get_next_seqs()
-        if not children and not next_seqs:
-            root.set_self_cycle_limitation(1)
-        for child in children:
-            self._set_all_self_cycles(child)
-        children_self_cycles = sum([child._self_cycle_limitation for child in children])
-        seq_path_len = self.calc_seq_path_len(root)
-        root.set_self_cycle_limitation()
+        children = root.get_children()
+        if not next_seqs:
+            if not children:
+                return 1
+            else:
+                return max([self._set_all_self_cycles(child) for child in children])
+        else:
+            self.calc_seq_chain_size(root)
+            return sum()
 
-    def calc_seq_path_len(self, root):
+        # children_self_cycles = sum([child._self_cycle_limitation for child in children])
+        # seq_path_len = self.calc_seq_path_len(root)
+        # root.set_self_cycle_limitation()
+
+    def calc_seq_chain_size(self, root):
+        seqs_sizes = []
         if not root.get_next_seqs():
             return 0
-        return 1 + max([self.calc_seq_path_len(seq) for seq in root.get_next_seqs()])
+        for seq in root.get_next_seqs():
+            seqs_sizes.append(self._set_all_self_cycles(seq))
+        max_seq = max(seqs_sizes)
+        seqs_sizes = [max_seq]
+        return max([self.calc_seq_chain_size(seq) for seq in root.get_next_seqs()])
