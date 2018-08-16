@@ -36,6 +36,8 @@ class DurationTagManager(object):
             if self._is_consistent(node, all_tagged_previous_stage, time_stamp):
                 if duration < node.get_min_duration():
                     node.soft_tag(time_stamp)
+                    if duration + 1 == node.get_min_duration():
+                        node.tag(time_stamp)
                 else:
                     node.tag(time_stamp)
                 all_tagged_this_stage.append(node)

@@ -948,7 +948,7 @@
 				<OrderCons firstIndex="1" secondIndex="2" />
 				<OrderCons firstIndex="2" secondIndex="3" />
 			</Order>
-			<Letter id="B1" index="1" />
+			<Letter id="B1" index="1" minDuration="1" maxDuration="5"/>
 			<Letter id="B18" index="2" />
 			<Letter id="B35" index="3" />
 		</Recipe>

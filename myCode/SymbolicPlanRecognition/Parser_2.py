@@ -1,4 +1,3 @@
-from SymbolicPlanRecognition import NodeFactory
 from TreeNode import TreeNode
 import xml.etree.ElementTree as Et
 
@@ -7,7 +6,6 @@ class Parser(object):
     def __init__(self, node_creator):
         self._id_counter = 0
         self._hmap = {}
-        self._goals = []
         self._recipes = []
         self._doc = None
         self._nodeFactory = node_creator
@@ -26,9 +24,7 @@ class Parser(object):
         # find root's children (those with the attribute 'goal = yes' in the xml)
         for letter in non_terminal_letters:
             if letter.get("goal") == "yes":
-                self._goals.append(letter.get("id"))
-                # TODO:this is the critical section. The node creator should create a node with the right properties
-                p = self._nodeFactory(self.generate_ID(), letter.get("id"))
+                p = self._nodeFactory(self.generate_ID(), letter)
                 root.add_child(p)
                 self._hmap[letter.get("index")] = p
 
@@ -55,7 +51,7 @@ class Parser(object):
         letters = recipe.findall("Letter")
         for letter in letters:
             id = self.generate_ID()
-            child = self._nodeFactory(self.generate_ID(), letter.get("id"))
+            child = self._nodeFactory(self.generate_ID(), letter)
             p.add_child(child)
             self._hmap[letter.get("index")] = child
 

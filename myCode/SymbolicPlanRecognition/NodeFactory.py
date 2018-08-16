@@ -4,11 +4,11 @@ from TreeNode import TreeNode
 
 
 def create_node(ID, node_attributes):
-    if "maxDuration" in node_attributes:
-        return create_duration_tree_node(ID, node_attributes.get("id"), node_attributes.get("minDuration"),
-                                         node_attributes.get("maxDuration"))
+    if 'maxDuration' in node_attributes.keys():
+        return create_duration_tree_node(ID, node_attributes.get("id"), int(node_attributes.get("minDuration")),
+                                         int(node_attributes.get("maxDuration")))
     else:
-        return create_tree_node(ID, node_attributes.get("id"))
+        return create_duration_tree_node(ID, node_attributes.get("id"))
 
 
 def create_tree_node(ID, label, parent=None, children=None, is_root=False,
