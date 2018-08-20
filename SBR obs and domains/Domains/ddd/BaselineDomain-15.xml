@@ -53,7 +53,7 @@
 			<Letter id="B49" name="B49" />
 			<Letter id="B50" name="B50" />
 			<Letter id="B51" name="B51" />
-			<Letter goal="yes" id="B52" name="B52" />
+			<Letter goal="yes" id="B52" name="B52" minDuration="12" maxDuration="41"/>
 			<Letter id="B53" name="B53" />
 			<Letter id="B54" name="B54" />
 			<Letter id="B55" name="B55" />
@@ -506,7 +506,7 @@
 			<Letter id="A69" index="1" />
 		</Recipe>
 		<Recipe lhs="B14" prob="0.1">
-			<Letter id="A57" index="1" />
+			<Letter id="A57" index="1" minDuration="1" maxDuration="3"/>
 		</Recipe>
 		<Recipe lhs="B14" prob="0.1">
 			<Letter id="A62" index="1" />
@@ -521,7 +521,7 @@
 			<Letter id="A26" index="1" />
 		</Recipe>
 		<Recipe lhs="B15" prob="0.1">
-			<Letter id="A40" index="1" />
+			<Letter id="A40" index="1" minDuration="1" maxDuration="2"/>
 		</Recipe>
 		<Recipe lhs="B15" prob="0.1">
 			<Letter id="A85" index="1" />
@@ -536,16 +536,16 @@
 			<Letter id="A63" index="1" />
 		</Recipe>
 		<Recipe lhs="B16" prob="0.1">
-			<Letter id="A91" index="1" />
+			<Letter id="A91" index="1" minDuration="1" maxDuration="5"/>
 		</Recipe>
 		<Recipe lhs="B17" prob="0.1">
 			<Order>
 				<OrderCons firstIndex="1" secondIndex="2" />
 				<OrderCons firstIndex="2" secondIndex="3" />
 			</Order>
-			<Letter id="B14" index="1" />
-			<Letter id="B15" index="2" />
-			<Letter id="B16" index="3" />
+			<Letter id="B14" index="1" minDuration="1" maxDuration="8"/>
+			<Letter id="B15" index="2" minDuration="1" maxDuration="6"/>
+			<Letter id="B16" index="3" minDuration="1" maxDuration="5"/>
 		</Recipe>
 		<Recipe lhs="B1" prob="0.1">
 			<Letter id="B5" index="1" />
@@ -557,7 +557,7 @@
 			<Letter id="B13" index="1" />
 		</Recipe>
 		<Recipe lhs="B1" prob="0.1">
-			<Letter id="B17" index="1" />
+			<Letter id="B17" index="1" minDuration="3" maxDuration="19"/>
 		</Recipe>
 		<Recipe lhs="B19" prob="0.1">
 			<Letter id="A28" index="1" />
@@ -698,7 +698,7 @@
 			<Letter id="A94" index="1" />
 		</Recipe>
 		<Recipe lhs="B31" prob="0.1">
-			<Letter id="A99" index="1" />
+			<Letter id="A99" index="1" minDuration="1" maxDuration="4"/>
 		</Recipe>
 		<Recipe lhs="B31" prob="0.1">
 			<Letter id="A15" index="1" />
@@ -707,7 +707,7 @@
 			<Letter id="A78" index="1" />
 		</Recipe>
 		<Recipe lhs="B32" prob="0.1">
-			<Letter id="A48" index="1" />
+			<Letter id="A48" index="1" minDuration="1" maxDuration="3"/>
 		</Recipe>
 		<Recipe lhs="B32" prob="0.1">
 			<Letter id="A50" index="1" />
@@ -719,7 +719,7 @@
 			<Letter id="A58" index="1" />
 		</Recipe>
 		<Recipe lhs="B33" prob="0.1">
-			<Letter id="A23" index="1" />
+			<Letter id="A23" index="1" minDuration="2" maxDuration="3"/>
 		</Recipe>
 		<Recipe lhs="B33" prob="0.1">
 			<Letter id="A19" index="1" />
@@ -735,9 +735,9 @@
 				<OrderCons firstIndex="1" secondIndex="2" />
 				<OrderCons firstIndex="2" secondIndex="3" />
 			</Order>
-			<Letter id="B31" index="1" />
-			<Letter id="B32" index="2" />
-			<Letter id="B33" index="3" />
+			<Letter id="B31" index="1" minDuration="1" maxDuration="4"/>
+			<Letter id="B32" index="2" minDuration="1" maxDuration="3"/>
+			<Letter id="B33" index="3" minDuration="2" maxDuration="4"/>
 		</Recipe>
 		<Recipe lhs="B18" prob="0.1">
 			<Letter id="B22" index="1" />
@@ -749,7 +749,7 @@
 			<Letter id="B30" index="1" />
 		</Recipe>
 		<Recipe lhs="B18" prob="0.1">
-			<Letter id="B34" index="1" />
+			<Letter id="B34" index="1" minDuration="4" maxDuration="11"/>
 		</Recipe>
 		<Recipe lhs="B36" prob="0.1">
 			<Letter id="A37" index="1" />
@@ -803,7 +803,7 @@
 			<Letter id="A23" index="1" />
 		</Recipe>
 		<Recipe lhs="B40" prob="0.1">
-			<Letter id="A58" index="1" />
+			<Letter id="A58" index="1" minDuration="2" maxDuration="3"/>
 		</Recipe>
 		<Recipe lhs="B40" prob="0.1">
 			<Letter id="A96" index="1" />
@@ -815,13 +815,13 @@
 			<Letter id="A98" index="1" />
 		</Recipe>
 		<Recipe lhs="B41" prob="0.1">
-			<Letter id="A70" index="1" />
+			<Letter id="A70" index="1" minDuration="1" maxDuration="3"/>
 		</Recipe>
 		<Recipe lhs="B41" prob="0.1">
 			<Letter id="A37" index="1" />
 		</Recipe>
 		<Recipe lhs="B42" prob="0.1">
-			<Letter id="A58" index="1" />
+			<Letter id="A58" index="1" minDuration="2" maxDuration="5"/>
 		</Recipe>
 		<Recipe lhs="B42" prob="0.1">
 			<Letter id="A44" index="1" />
@@ -837,9 +837,9 @@
 				<OrderCons firstIndex="1" secondIndex="2" />
 				<OrderCons firstIndex="2" secondIndex="3" />
 			</Order>
-			<Letter id="B40" index="1" />
-			<Letter id="B41" index="2" />
-			<Letter id="B42" index="3" />
+			<Letter id="B40" index="1" minDuration="2" maxDuration="3"/>
+			<Letter id="B41" index="2" minDuration="1" maxDuration="3"/>
+			<Letter id="B42" index="3" minDuration="2" maxDuration="5"/>
 		</Recipe>
 		<Recipe lhs="B44" prob="0.1">
 			<Letter id="A37" index="1" />
@@ -935,7 +935,7 @@
 			<Letter id="B39" index="1" />
 		</Recipe>
 		<Recipe lhs="B35" prob="0.1">
-			<Letter id="B43" index="1" />
+			<Letter id="B43" index="1" minDuration="5" maxDuration="11"/>
 		</Recipe>
 		<Recipe lhs="B35" prob="0.1">
 			<Letter id="B47" index="1" />
@@ -948,9 +948,9 @@
 				<OrderCons firstIndex="1" secondIndex="2" />
 				<OrderCons firstIndex="2" secondIndex="3" />
 			</Order>
-			<Letter id="B1" index="1" />
-			<Letter id="B18" index="2" />
-			<Letter id="B35" index="3" />
+			<Letter id="B1" index="1" minDuration="3" maxDuration="19"/>
+			<Letter id="B18" index="2" minDuration="4" maxDuration="11" />
+			<Letter id="B35" index="3" minDuration="5" maxDuration="11"/>
 		</Recipe>
 		<Recipe lhs="B54" prob="0.1">
 			<Letter id="A4" index="1" />

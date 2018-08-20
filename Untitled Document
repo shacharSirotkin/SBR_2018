@@ -1,0 +1,9 @@
+[['root\n    B52\n        B35\n            B43\n                B42\n                    A58\n 9',
+ 'root\n    B52\n        B35\n            B43\n                B41\n                    A70\n 8',
+ 'root\n    B52\n        B35\n            B43\n                B40\n                    A58\n 7',
+ 'root\n    B52\n        B18\n            B34\n                B33\n                    A23\n 6',
+ 'root\n    B52\n        B18\n            B34\n                B32\n                    A48\n 5', 
+'root\n    B52\n        B18\n            B34\n                B31\n                    A99\n 4', 
+'root\n    B52\n        B1\n            B17\n                B16\n                    A91\n 3',
+ 'root\n    B52\n        B1\n            B17\n                B15\n                    A40\n 2',
+ 'root\n    B52\n        B1\n            B17\n                B14\n                    A57\n 1']]

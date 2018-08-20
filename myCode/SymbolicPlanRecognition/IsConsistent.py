@@ -5,6 +5,13 @@ def basic(w, all_tagged_previous_stage, t):
         return False
 
 
+def duration(w, all_tagged_previous_stage, t):
+    if w.soft_tagged(t - 1) or w.previous_seq_edge_tagged(all_tagged_previous_stage) or w.is_first():
+        return True
+    else:
+        return False
+
+
 def self_cycle(w, all_tagged_previous_stage, t):
     if w.tagged(t - 1) or w.previous_seq_edge_tagged(all_tagged_previous_stage) or w.is_first():
         return True

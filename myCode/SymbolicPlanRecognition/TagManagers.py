@@ -24,13 +24,15 @@ class BasicTagManager(object):
 
 
 class DurationTagManager(object):
-    def __init__(self, interleaving=None):
+    def __init__(self, interleaving=False):
         if not interleaving:
-            self._is_consistent = isConsistent.self_cycle
+            self._is_consistent = isConsistent.duration
         else:
             self._is_consistent = isConsistent.self_cycle_interleaved
 
     def manage_tag(self, node, time_stamp, all_tagged_previous_stage, all_tagged_this_stage, tagged):
+        if node.soft_tagged(time_stamp):
+            return node.parent(), True
         duration = self._calc_duration(node, time_stamp)
         if duration <= node.get_max_duration():
             if self._is_consistent(node, all_tagged_previous_stage, time_stamp):

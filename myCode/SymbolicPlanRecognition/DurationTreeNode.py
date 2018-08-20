@@ -19,6 +19,7 @@ class DurationTreeNode(TreeNode):
 
     def delete_tag(self, t):
         if t in self.get_tags():
+            self._soft_tags.remove(t)
             self._tags.remove(t)
         else:
             self._soft_tags.remove(t)

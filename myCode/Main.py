@@ -10,9 +10,10 @@ domains = {
            # 4: "full-20-1-5-3-2-1",
            # 5: "full-100",
            # 6: "1-5-2-3-2-full-100_baseline",
-           7: "1-5-2-3-4-full-100_or",
+           # 7: "1-5-2-3-4-full-100_or",
            # 8: "1-5-2-5-2-full-100_and",
            # 9: "1-5-3-3-2-full-100_depth",
+            1: "ddd"
            }
 
 
@@ -29,13 +30,13 @@ def main():
         onlyfiles = [join(input_folder_name + "Domains/" + domains[domain_name] + "/", f.replace("\\", "/")) for f in
                      listdir(input_folder_name + "Domains/" + domains[domain_name] + "/")
                      if isfile(join(input_folder_name + "Domains/" + domains[domain_name] + "/", f))]
+        onlyfiles = [file1 for file1 in onlyfiles if file1.endswith(".xml")]
         for domain_file in onlyfiles:
             print domain_file
-            if domain_file.endswith(".xml"):
-                plan_recognizer = SymbolicPlanRecognition(domain_file)
-                obs_file = domain_file.replace("Domains", "Observations").replace("BaselineDomain", "Observations").\
-                    replace(".xml", ".txt")
-                run(plan_recognizer, obs_file)
+            plan_recognizer = SymbolicPlanRecognition(domain_file)
+            obs_file = domain_file.replace("Domains", "Observations").replace("BaselineDomain", "Observations").\
+                replace(".xml", ".txt")
+            run(plan_recognizer, obs_file)
 
 
 def run(plan_recognizer, obs_file_name):

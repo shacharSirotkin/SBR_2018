@@ -17,7 +17,7 @@ class SymbolicPlanRecognition(object):
         self._csq = CSQ(tag_manager)
         self._hsq = HSQ()
         self._previous_tagged_nodes = []
-        self._parser = Parser(NodeFactory.create_node)
+        self._parser = Parser(NodeFactory.create_duration_node)
         self._root = self.parse(domain_file)
         # get list of any node in the plan library
         self._plans = self._root.search()
