@@ -13,7 +13,7 @@ domains = {
            # 7: "1-5-2-3-4-full-100_or",
            # 8: "1-5-2-5-2-full-100_and",
            # 9: "1-5-3-3-2-full-100_depth",
-            1: "ddd"
+            1: "test"
            }
 
 
@@ -44,8 +44,9 @@ def run(plan_recognizer, obs_file_name):
     read_obs_and_apply_csq(obs_file_name, plan_recognizer)
 
     all_paths = plan_recognizer.apply_hsq()
-    print all_paths
-
+    all_paths_string = all_paths.__repr__()
+    all_paths_string = all_paths_string.replace(',', ',\n')
+    print all_paths_string
 
 def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
     with open(obs_file_name) as obs_file:

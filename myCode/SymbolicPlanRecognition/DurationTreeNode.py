@@ -11,21 +11,30 @@ class DurationTreeNode(TreeNode):
         self._soft_tags = []
         TreeNode.__init__(self, ID, label, parent, children, is_root, is_complete, tags, seq_of, seq)
 
-    def soft_tag(self,t):
-        self._soft_tags.append(t)
+    def soft_tag(self, time_stamp):
+        self._soft_tags.append(time_stamp)
 
-    def soft_tagged(self, t):
-            return t in self._soft_tags
+    def soft_tagged(self, time_stamp):
+            return time_stamp in self._soft_tags
 
-    def delete_tag(self, t):
-        if t in self.get_tags():
-            self._soft_tags.remove(t)
-            self._tags.remove(t)
+    def delete_tag(self, time_stamp):
+        if time_stamp in self.get_tags():
+            self._soft_tags.remove(time_stamp)
+            self._tags.remove(time_stamp)
         else:
-            self._soft_tags.remove(t)
+            self._soft_tags.remove(time_stamp)
 
     def get_min_duration(self):
         return self._min_duration
 
     def get_max_duration(self):
         return self._max_duration
+
+    def tag_retroactively(self,time_stamp):
+        in_range = False
+        for time in xrange(time_stamp - 1, 1, -1):
+            if time in self._soft_tags and time not in self._tags:
+                self.tag(time)
+                in_range = True
+            elif in_range:
+                break

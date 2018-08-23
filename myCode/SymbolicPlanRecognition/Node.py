@@ -11,14 +11,14 @@ class Node(object):
     def root(self):
         return self._is_root
 
-    def tag(self, t):
-        self._tags.append(t)
+    def tag(self, time_stamp):
+        self._tags.append(time_stamp)
 
-    def delete_tag(self, t):
-        self._tags.remove(t)
+    def delete_tag(self, time_stamp):
+        self._tags.remove(time_stamp)
 
-    def tagged(self, t):
-        return t in self._tags
+    def tagged(self, time_stamp):
+        return time_stamp in self._tags
 
     def is_first(self):
         return self._prev_seqs == []
@@ -38,12 +38,6 @@ class Node(object):
 
     def get_seq_of(self):
         return self._prev_seqs
-
-    def set_complete(self, complete):
-        self._is_complete = complete
-
-    def get_is_complete(self):
-        return self._is_complete
 
     def get_tags(self):
         return self._tags

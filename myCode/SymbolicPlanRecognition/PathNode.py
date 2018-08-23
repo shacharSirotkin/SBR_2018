@@ -23,41 +23,45 @@ class PathNode(Node):
 
     # return the depth where there is a node of the given path which is a prev_seq of node in this path
     def get_seq_child_depth(self, another_path):
+        # if the paths are the same saying that there is a sequential edge between them will be a vacuous truth
+        if self == another_path:
+            return 0
         # get all nodes in both paths
         path1_nodes = another_path.search()
         path2_nodes = self.search()
 
         p = None
 
+        # look for node from path1 and path2 which have a sequential edge from one to the other
+        # if two nodes was found p would be the node which the sequential edge come from
         for node1 in path1_nodes:
             for node2 in path2_nodes:
                 if node2._id in node1._prev_seqs:
                     p = node2
                     break
 
-        level = -1
+        depth = -1
 
         p_check = self
 
+        # find the depth of p in path2(which is actually self)
         if p is not None:
             while p_check != p:
-                level += 1
+                depth += 1
                 p_check = p_check._child
 
-        return level
+        return depth
 
     def __repr__(self):
         res = self._label
-        res += "\n"
         if self._child is not None:
-                res += self._child.to_string("    ")
+                res += self._child.to_string(" ")
         return res
 
     def to_string(self, init):
         res = init + self._label
-        res += "\n"
         if self._child is not None:
-            res += self._child.to_string(init + "    ")
+            res += self._child.to_string(init)
         return res
 
     def __eq__(self, other):

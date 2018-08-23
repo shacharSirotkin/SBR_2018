@@ -4,7 +4,7 @@ import copy
 
 class TreeNode(Node):
     def __init__(self, ID, label, parent=None, children=None, is_root=False,
-                 is_complete=False, tags=None, seq_of=None, seq=None, descendants=None):
+                 is_complete=False, tags=None, seq_of=None, seq=None):
         self._self_cycle_limitation = None
         self._parent = parent
         if not children:
@@ -15,8 +15,6 @@ class TreeNode(Node):
             seq_of = []
         if not seq:
             seq = []
-        if not descendants:
-            self._descendants = []
         Node.__init__(self, ID, label, is_root, is_complete, tags, seq_of, seq)
 
     @staticmethod
@@ -30,9 +28,9 @@ class TreeNode(Node):
         newone = TreeNode(ID, label, is_root=is_root, tags=tags, seq_of=seq_of, seq=seq)
         return newone
 
-    def child_tagged(self, t):
+    def child_tagged(self, time_stamp):
         for d in self._children:
-            if d.tagged(t):
+            if d.tagged(time_stamp):
                 return True
         if not self._children:
             return True

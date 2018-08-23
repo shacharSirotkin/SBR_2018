@@ -1,9 +1,52 @@
-[['root\n    B52\n        B35\n            B43\n                B42\n                    A58\n 9',
- 'root\n    B52\n        B35\n            B43\n                B41\n                    A70\n 8',
- 'root\n    B52\n        B35\n            B43\n                B40\n                    A58\n 7',
- 'root\n    B52\n        B18\n            B34\n                B33\n                    A23\n 6',
- 'root\n    B52\n        B18\n            B34\n                B32\n                    A48\n 5', 
-'root\n    B52\n        B18\n            B34\n                B31\n                    A99\n 4', 
-'root\n    B52\n        B1\n            B17\n                B16\n                    A91\n 3',
- 'root\n    B52\n        B1\n            B17\n                B15\n                    A40\n 2',
- 'root\n    B52\n        B1\n            B17\n                B14\n                    A57\n 1']]
+
+{1: [root B52 B1 B17 B14 A57],
+
+ 2: [root B52 B1 B17 B15 A40, root B104 B53 B61 B58 A40],
+
+ 3: [root B52 B1 B17 B16 A91, root B156 B105 B117 B114 A91, root B260 B209 B225 B222 A91],
+
+ 4: [root B52 B18 B34 B31 A99, root B208 B157 B173 B170 A99],
+
+ 5: [root B52 B18 B34 B32 A48],
+
+ 6: [root B52 B18 B34 B33 A23, root B52 B35 B43 B40 A23],
+
+ 7: [root B52 B35 B43 B40 A58],
+
+ 8: [root B52 B35 B43 B41 A70, root B208 B157 B165 B162 A70],
+
+ 9: [root B52 B35 B43 B40 A58, root B52 B35 B43 B42 A58]}
+
+
+[['root B52 B35 B43 B42 A58 9',
+
+ 'root B52 B35 B43 B41 A70 8',
+
+ 'root B52 B35 B43 B40 A58 7',
+
+ 'root B52 B18 B34 B33 A23 6',
+
+ 'root B52 B18 B34 B32 A48 5',
+
+ 'root B52 B18 B34 B31 A99 4',
+
+ 'root B52 B1 B17 B16 A91 3',
+
+ 'root B52 B1 B17 B15 A40 2',
+
+ 'root B52 B1 B17 B14 A57 1']]
+
+
+{1: [root B52 B1 B17 B14 A57],
+ 2: [root B52 B1 B17 B15 A40, root B104 B53 B61 B58 A40],
+ 3: [root B52 B1 B17 B16 A91, root B156 B105 B117 B114 A91, root B260 B209 B225 B222 A91],
+ 4: [root B52 B18 B34 B31 A99, root B208 B157 B173 B170 A99],
+ 5: [root B52 B18 B34 B32 A48],
+ 6: [root B52 B35 B43 B40 A23],
+ 7: [root B52 B35 B43 B40 A58],
+ 8: [root B52 B35 B43 B40 A58],
+ 9: [root B52 B35 B43 B41 A70, root B208 B157 B165 B162 A70],
+ 10: [root B52 B35 B43 B40 A58, root B52 B35 B43 B42 A58],
+ 11: [root B52 B35 B43 B40 A58, root B52 B35 B43 B42 A58]}
+[]
+

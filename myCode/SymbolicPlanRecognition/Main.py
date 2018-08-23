@@ -22,52 +22,18 @@ class SymbolicPlanRecognition(object):
         # get list of any node in the plan library
         self._plans = self._root.search()
         self._matcher = Matcher(self._root)
-        self._all_tags = []
+        self._tags = []
 
     def apply_hsq(self):
         # for each tag create path from obs to root
-        map_of_paths = self._generate_paths_map()
+        map_of_paths = self._hsq.generate_paths_map(self._root, self._tags)
         # apply hsq on the optional paths
         return self._hsq.apply_hsq(map_of_paths)
 
     def apply_csq(self, current_optional_obs, t):
-        self._all_tags.append(t)
+        self._tags.append(t)
         self._previous_tagged_nodes = self._csq.apply_csq(current_optional_obs, t, self._previous_tagged_nodes)
         return self._previous_tagged_nodes
-
-    # create map from time-stamps to paths of each tagged node to the root
-    def _generate_paths_map(self):
-        map_of_paths = {}
-        for tag in self._all_tags:
-            for child in self._root.get_children():
-                if child.tagged(tag):
-                    leaves = child.get_leaves()
-                    paths = self._make_paths(leaves, tag)
-                    if tag in map_of_paths.keys():
-                        map_of_paths[tag].extend(paths)
-                    else:
-                        paths_to_put = paths
-                        map_of_paths[tag] = paths_to_put
-        print map_of_paths
-        return map_of_paths
-
-    def _make_paths(self, leaves, tag):
-        paths = []
-        for p in leaves:
-            new_parent = None
-            if p.tagged(tag):
-                new_node = PathNode(p)
-                while p.parent() is not None:
-                    new_parent = PathNode(p.parent())
-                    # if node has no next sequential nodes mark it as complete
-                    if not new_node.get_next_seqs():
-                        new_node.set_complete(True)
-                    new_node.set_parent(new_parent)
-                    p = p.parent()
-                    new_node = new_parent
-            if new_parent is not None:
-                paths.append(new_parent)
-        return paths
 
     def parse(self, domain_file):
         return self._parser.parse(domain_file)
