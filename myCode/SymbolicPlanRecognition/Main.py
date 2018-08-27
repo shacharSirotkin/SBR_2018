@@ -1,23 +1,32 @@
-from SymbolicPlanRecognition import NodeFactory
-from SymbolicPlanRecognition.CSQ import CSQ
-from SymbolicPlanRecognition.HSQ import HSQ
-from SymbolicPlanRecognition.Matcher import Matcher
-from SymbolicPlanRecognition.Parser_2 import Parser
-from SymbolicPlanRecognition.PathNode import PathNode
-from SymbolicPlanRecognition.TagManagers import DurationTagManager, BasicTagManager
+from CSQ import CSQ
+from HSQ import HSQ
+from Matcher import Matcher
+from Parser import Parser
+from TagManagers import DurationTagManager, BasicTagManager, InterleavingTagManager
+from SequentialsParser import read_interleaving_order_cons, read_order_cons
+from NodeFactory import create_tree_node, create_duration_node, create_interleaving_tree_node
 
 
 class SymbolicPlanRecognition(object):
-    def __init__(self, domain_file, duration=True, self_cycle=True, interleaving=False):
+    def __init__(self, domain_file, duration=False, self_cycle=True, interleaving=True):
         # TODO: dill with interrupt
         if not duration:
-            tag_manager = BasicTagManager(self_cycle, interleaving)
+            if not interleaving:
+                cons_reader = read_order_cons
+                node_creator = create_tree_node
+                tag_manager = BasicTagManager(self_cycle)
+            else:
+                cons_reader = read_interleaving_order_cons
+                node_creator = create_interleaving_tree_node
+                tag_manager = InterleavingTagManager(self_cycle)
         else:
+            cons_reader = read_order_cons
+            node_creator = create_duration_node
             tag_manager = DurationTagManager(interleaving)
         self._csq = CSQ(tag_manager)
         self._hsq = HSQ()
         self._previous_tagged_nodes = []
-        self._parser = Parser(NodeFactory.create_duration_node)
+        self._parser = Parser(node_creator, cons_reader)
         self._root = self.parse(domain_file)
         # get list of any node in the plan library
         self._plans = self._root.search()

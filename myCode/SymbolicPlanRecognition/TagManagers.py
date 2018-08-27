@@ -2,14 +2,9 @@ import SymbolicPlanRecognition.IsConsistent as isConsistent
 
 
 class BasicTagManager(object):
-    def __init__(self, self_cycle=False, interleaving=False):
+    def __init__(self, self_cycle=False):
         if not self_cycle:
-            if interleaving:
-                self._is_consistent = isConsistent.interleaved
-            else:
                 self._is_consistent = isConsistent.basic
-        elif interleaving:
-            self._is_consistent = isConsistent.self_cycle_interleaved
         else:
             self._is_consistent = isConsistent.self_cycle
 
@@ -74,7 +69,7 @@ class InterleavingTagManager(object):
     def manage_tag(self, node, time_stamp, all_tagged_previous_stage, all_tagged_this_stage, tagged):
         if self._is_consistent(node, all_tagged_previous_stage, time_stamp):
             node.tag(time_stamp)
-            node.set_last_leaved_node(node._id)
+            node.set_last_leaved_node(node.get_ID())
             all_tagged_this_stage.append(node)
             tagged.append(node)
             return node.parent(), True

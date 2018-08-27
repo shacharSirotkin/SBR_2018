@@ -48,6 +48,7 @@ def run(plan_recognizer, obs_file_name):
     all_paths_string = all_paths_string.replace(',', ',\n')
     print all_paths_string
 
+
 def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
     with open(obs_file_name) as obs_file:
         for row in obs_file:
@@ -57,6 +58,8 @@ def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
                 label = row[ws + 1:]
                 label = label.replace("\r", "").replace("\n", "")
                 current_optional_obs = plan_recognizer.match(label)
+                if t == 6:
+                    pass
                 plan_recognizer.apply_csq(current_optional_obs, t)
 
 

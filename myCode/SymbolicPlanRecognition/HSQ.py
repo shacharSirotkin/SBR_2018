@@ -7,8 +7,7 @@ path_string_to_path_plan = {}
 
 class HSQ(object):
     def apply_hsq(self, map_of_paths):
-        # TODO: duration doesn't work due to soft tags that the hsq doesnt "see"
-        G = nx.DiGraph()
+        g = nx.DiGraph()
         # create directed graph of paths according to tags in each time-stamp
         for i in xrange(len(map_of_paths), 1, -1):
             for path1 in map_of_paths[i]:
@@ -22,9 +21,9 @@ class HSQ(object):
                     # if path1 has no previous sequentials or there is sequential connection between the paths
                     # create nodes and edge between them in the directed graph g
                     if is_first_child or has_seq_child:
-                        self.generate_edge(G, path1, path2, i)
+                        self.generate_edge(g, path1, path2, i)
         # return all simple paths in the graph from node with last time-stamp to node with time-stamp 1
-        all_paths = self.get_all_paths(map_of_paths, G)
+        all_paths = self.get_all_paths(map_of_paths, g)
         return all_paths
 
     # create nodes and edge between them in the directed graph g
@@ -55,12 +54,12 @@ class HSQ(object):
     def is_first_child(self, path1):
         search = path1.search()
         for child1 in search:
-            if child1.get_seq_of():
+            if child1.get_prev_seqs():
                 return False
         return True
 
 # create map from time-stamps to paths from each tagged node to the root
-    def generate_paths_map(self,root, tags):
+    def generate_paths_map(self, root, tags):
         map_of_paths = {}
         for tag in tags:
             for child in root.get_children():

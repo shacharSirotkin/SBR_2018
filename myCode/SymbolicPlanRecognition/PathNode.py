@@ -5,8 +5,9 @@ class PathNode(Node):
     def __init__(self, tree_node):
         self._parent = None
         self._child = None
-        Node.__init__(self, tree_node._id, tree_node._label, tree_node._is_root, is_complete=False,
-                      tags=list(tree_node._tags), seq_of=list(tree_node._prev_seqs), seq=list(tree_node._next_seqs))
+        Node.__init__(self, tree_node.get_ID(), tree_node.get_label(), tree_node.get_is_root(),
+                      tags=tree_node.get_tags(), seq_of=tree_node.get_prev_seqs(),
+                      seq=tree_node.get_next_seqs())
 
     def set_parent(self, parent):
         self._parent = parent
@@ -36,7 +37,7 @@ class PathNode(Node):
         # if two nodes was found p would be the node which the sequential edge come from
         for node1 in path1_nodes:
             for node2 in path2_nodes:
-                if node2._id in node1._prev_seqs:
+                if node2._id in node1.get_prev_seqs():
                     p = node2
                     break
 
@@ -48,7 +49,7 @@ class PathNode(Node):
         if p is not None:
             while p_check != p:
                 depth += 1
-                p_check = p_check._child
+                p_check = p_check.get_child()
 
         return depth
 

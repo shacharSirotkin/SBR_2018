@@ -4,7 +4,7 @@ from os.path import isfile, join
 
 from SymbolicPlanRecognition.CSQ_ran import CSQ
 import SymbolicPlanRecognition.HSQ as HSQ
-from SymbolicPlanRecognition.Parser import Parser
+from SymbolicPlanRecognition.Parser_test import Parser
 from SymbolicPlanRecognition.TreeNode import TreeNode
 import SymbolicPlanRecognition.PathNode as PathNode
 

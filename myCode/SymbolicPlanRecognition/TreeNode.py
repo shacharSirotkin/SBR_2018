@@ -4,7 +4,7 @@ import copy
 
 class TreeNode(Node):
     def __init__(self, ID, label, parent=None, children=None, is_root=False,
-                 is_complete=False, tags=None, seq_of=None, seq=None):
+                 tags=None, seq_of=None, seq=None):
         self._self_cycle_limitation = None
         self._parent = parent
         if not children:
@@ -15,17 +15,16 @@ class TreeNode(Node):
             seq_of = []
         if not seq:
             seq = []
-        Node.__init__(self, ID, label, is_root, is_complete, tags, seq_of, seq)
+        Node.__init__(self, ID, label, is_root, tags, seq_of, seq)
 
     @staticmethod
     def get_from_path_node(path_node):
         label = path_node.get_label()
-        ID = path_node.get_ID()
         tags = copy.deepcopy(path_node.get_tags())
         seq = path_node.get_next_seqs()
-        seq_of = path_node.get_seq_of()
+        seq_of = path_node.get_prev_seqs()
         is_root = path_node.root()
-        newone = TreeNode(ID, label, is_root=is_root, tags=tags, seq_of=seq_of, seq=seq)
+        newone = TreeNode(path_node.get_ID(), label, is_root=is_root, tags=tags, seq_of=seq_of, seq=seq)
         return newone
 
     def child_tagged(self, time_stamp):
@@ -34,10 +33,6 @@ class TreeNode(Node):
                 return True
         if not self._children:
             return True
-
-    def set_parent(self, parent):
-        self._parent = parent
-        parent._children.append(self)
 
     def search(self):
         lst = [self]
@@ -77,15 +72,9 @@ class TreeNode(Node):
                 res += child.to_string(init + "    ")
         return res
 
-    def first_child_of_node(self):
-        return self._children[0]
-
-    def is_not_leaf(self):
-        return self._children != []
-
-    def previous_seq_edge_tagged(self, all_tagged_previous_stage):
+    def previous_tagged(self, all_tagged_previous_stage):
         for p in all_tagged_previous_stage:
-            if p._id in self._prev_seqs:
+            if self.single_previous_tagged_by_ID(p.get_ID()):
                 return True
         return False
 
@@ -94,9 +83,12 @@ class TreeNode(Node):
 
     def find_by_label(self, s):
         for p in self.search():
-            if p._label == s:
+            if p.get_label() == s:
                 return p
         return None
 
-    def set_self_cycle_limitation(self, self_cycle_limitation):
-        self._self_cycle_limitation = self_cycle_limitation
+    def single_previous_tagged_by_ID(self, node_id):
+        if node_id in self._prev_seqs:
+            return True
+        else:
+            return False

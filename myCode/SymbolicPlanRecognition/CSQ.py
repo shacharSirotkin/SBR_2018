@@ -3,7 +3,7 @@ from SymbolicPlanRecognition.TagManagers import BasicTagManager
 
 class CSQ(object):
 
-    def __init__(self, tag_manager=None,is_consistent=None):
+    def __init__(self, tag_manager=None, is_consistent=None):
         if not tag_manager:
             self._tag_manager = BasicTagManager(is_consistent)
         else:
