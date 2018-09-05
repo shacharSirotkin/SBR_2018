@@ -8,3 +8,20 @@ Could be a situation where in the same PL some of the node would have a self cyc
 
 
 
+
+Hsq with interleaving is a pretty mess. The algorythm needs to understand where the interrupting behavior start and end and dill with it as individual task. Then it will manage the remaining tags and regard them as sequentail tags and dill with them as another individual task.
+
+How can the algo find where the interrupting behavior start and end? It wil be a stupid way is to run over every possible linear subset of the pathNodes and trying to dill with it and with the rest tags as separate task. In case that both parts are correct paths return them as two Hsq's.
+
+solution: decrease the problem by noticing that only pathNode who has a node in the HSQ graph that does not reach the known ends can be a start of the interrupting behavior.
+(Notice, we are looking for a start(A first Child node). By looking on the building process of the HSQ graph, every first child node has a node in the HSQ graph.    So, pathNodes who doesn't have a node in the HSQ graph can not be this start. In addition, a node in the HSQ graph that reaches a known end is the start or part of this end's path. So, a node in the HSQ graph that reaches the known ends can not be a start of the interrupting behavior.)
+
+Now, when we have the suspect starts, we need to find the interrupting behavior's body.
+The nodes that we marked as the suspect starts are the HSQ nodes that does not reach the known ends.
+We need to prove whether there is a interrupting behavior's body's node who is not a suspect start.
+The suapect starts are every node HSQ nodes that does not reach the known ends, including sequentials connections.
+We ignore starts overs and looking for continious behavior. Therefore, the body nodes set must be part of the suspect starts set.
+
+Now, after we notice that, we decrease the interrupting behavior's start's set to be only nodes who are a first child. These will be our starts.
+
+

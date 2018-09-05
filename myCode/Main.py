@@ -58,8 +58,6 @@ def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
                 label = row[ws + 1:]
                 label = label.replace("\r", "").replace("\n", "")
                 current_optional_obs = plan_recognizer.match(label)
-                if t == 6:
-                    pass
                 plan_recognizer.apply_csq(current_optional_obs, t)
 
 

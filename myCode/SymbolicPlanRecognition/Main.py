@@ -2,6 +2,7 @@ from CSQ import CSQ
 from HSQ import HSQ
 from Matcher import Matcher
 from Parser import Parser
+from SymbolicPlanRecognition.InterleavingHSQ import InterleavingHSQ
 from TagManagers import DurationTagManager, BasicTagManager, InterleavingTagManager
 from SequentialsParser import read_interleaving_order_cons, read_order_cons
 from NodeFactory import create_tree_node, create_duration_node, create_interleaving_tree_node
@@ -23,8 +24,11 @@ class SymbolicPlanRecognition(object):
             cons_reader = read_order_cons
             node_creator = create_duration_node
             tag_manager = DurationTagManager(interleaving)
+        if interleaving:
+            self._hsq = InterleavingHSQ()
+        else:
+            self._hsq = HSQ()
         self._csq = CSQ(tag_manager)
-        self._hsq = HSQ()
         self._previous_tagged_nodes = []
         self._parser = Parser(node_creator, cons_reader)
         self._root = self.parse(domain_file)
