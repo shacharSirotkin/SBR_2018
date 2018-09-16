@@ -1,6 +1,6 @@
 from CSQ import CSQ
 from HSQ import HSQ
-from Matcher import Matcher
+from BasicMatcher import BasicMatcher
 from Parser import Parser
 from SymbolicPlanRecognition.InterleavingHSQ import InterleavingHSQ
 from TagManagers import DurationTagManager, BasicTagManager, InterleavingTagManager
@@ -8,8 +8,9 @@ from SequentialsParser import read_interleaving_order_cons, read_order_cons
 from NodeFactory import create_tree_node, create_duration_node, create_interleaving_tree_node
 
 
+# Note: I did not test running with Duaration and Interleaving together
 class SymbolicPlanRecognition(object):
-    def __init__(self, domain_file, duration=False, self_cycle=True, interleaving=True):
+    def __init__(self, domain_file, duration=True, self_cycle=True, interleaving=False):
         # TODO: dill with interrupt
         if not duration:
             if not interleaving:
@@ -34,7 +35,7 @@ class SymbolicPlanRecognition(object):
         self._root = self.parse(domain_file)
         # get list of any node in the plan library
         self._plans = self._root.search()
-        self._matcher = Matcher(self._root)
+        self._matcher = BasicMatcher(self._root)
         self._tags = []
 
     def apply_hsq(self):

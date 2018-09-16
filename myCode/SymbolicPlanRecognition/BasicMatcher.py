@@ -1,4 +1,4 @@
-class Matcher(object):
+class BasicMatcher(object):
     def __init__(self, root):
         self._plan = root.search()
 

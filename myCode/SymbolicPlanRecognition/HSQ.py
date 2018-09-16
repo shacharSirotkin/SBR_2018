@@ -17,7 +17,7 @@ class HSQ(object):
                 for previous_path in map_of_paths[i - 1]:
                     # The depth where there is a sequential connection from node in previous_path
                     # to node in current_path
-                    depth_of_seq = previous_path.get_seq_child_depth(current_path)
+                    depth_of_seq = previous_path.get_seq_to_next_depth(current_path)
                     # indicate whether there is a node of the given path which is a prev_seq of node in this path
                     has_seq_child = (depth_of_seq != -1)
                     # if current_path has no previous sequentials or there is sequential connection
@@ -42,11 +42,11 @@ class HSQ(object):
     # In another words, return every possible explanation to behavior that have been observed
     def get_all_paths(self, map_of_paths):
         all_paths = []
-        for path1 in map_of_paths[len(map_of_paths)]:
-            for path2 in map_of_paths[1]:
+        for end_path in map_of_paths[len(map_of_paths)]:
+            for start_path in map_of_paths[1]:
                 try:
-                    for path in nx.all_simple_paths(self.graph, source=str(path1) + " " + str(len(map_of_paths)),
-                                                    target=str(path2) + " " + str(1)):
+                    for path in nx.all_simple_paths(self.graph, source=str(end_path) + " " + str(len(map_of_paths)),
+                                                    target=str(start_path) + " " + str(1)):
                         all_paths.append(path)
                 except nx.exception.NodeNotFound:
                     pass

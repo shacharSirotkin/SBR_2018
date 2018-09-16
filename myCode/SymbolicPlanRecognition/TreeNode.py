@@ -74,7 +74,7 @@ class TreeNode(Node):
 
     def previous_tagged(self, all_tagged_previous_stage):
         for p in all_tagged_previous_stage:
-            if self.single_previous_tagged_by_ID(p.get_ID()):
+            if self.single_previous_tagged(p.get_ID()):
                 return True
         return False
 
@@ -87,7 +87,7 @@ class TreeNode(Node):
                 return p
         return None
 
-    def single_previous_tagged_by_ID(self, node_id):
+    def single_previous_tagged(self, node_id):
         if node_id in self._prev_seqs:
             return True
         else:

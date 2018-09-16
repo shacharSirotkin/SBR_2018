@@ -31,10 +31,8 @@ class DurationTreeNode(TreeNode):
         return self._max_duration
 
     def tag_retroactively(self, time_stamp):
-        in_range = False
         for time in xrange(time_stamp - 1, 1, -1):
-            if time in self._soft_tags and time not in self._tags:
-                self.tag(time)
-                in_range = True
-            elif in_range:
+            if time not in self._soft_tags:
                 break
+            elif time not in self._tags:
+                self.tag(time)

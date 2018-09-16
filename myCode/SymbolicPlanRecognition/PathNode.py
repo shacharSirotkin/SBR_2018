@@ -22,14 +22,8 @@ class PathNode(Node):
             lst.extend(self._child.search())
         return lst
 
-    def get_last(self):
-        last = self
-        while last.get_child():
-            last = last.get_child()
-        return last
-
     # return The depth where there is a sequential connection from node in this path to node in the given path
-    def get_seq_child_depth(self, next_path):
+    def get_seq_to_next_depth(self, next_path):
         # if the paths are the same, saying that there is a sequential edge between them will be a vacuous truth
         if self == next_path:
             return 0
@@ -73,3 +67,6 @@ class PathNode(Node):
 
     def __eq__(self, other):
         return other.__repr__() == self.__repr__()
+
+    def __hash__(self):
+        return hash(self.__repr__())

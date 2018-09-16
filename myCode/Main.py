@@ -13,7 +13,7 @@ domains = {
            # 7: "1-5-2-3-4-full-100_or",
            # 8: "1-5-2-5-2-full-100_and",
            # 9: "1-5-3-3-2-full-100_depth",
-            1: "test"
+            1: "duration_test"
            }
 
 
