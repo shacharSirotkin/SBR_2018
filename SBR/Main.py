@@ -17,16 +17,11 @@ domains = {
            }
 
 
-input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/"
-output_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_git/SBR obs and domains/SBR_OUTPUTS/"
+input_folder_name = "/home/shachar-s/Dropbox/studies/ThirdYear/SBR_Project/SBR_Shachar/SBR obs and domains/"
 
 
 def main():
     for domain_name in domains.keys():
-        if domain_name == 8:
-            pass
-        if not os.path.exists(output_folder_name + domains[domain_name]):
-            os.makedirs(output_folder_name + domains[domain_name])
         onlyfiles = [join(input_folder_name + "Domains/" + domains[domain_name] + "/", f.replace("\\", "/")) for f in
                      listdir(input_folder_name + "Domains/" + domains[domain_name] + "/")
                      if isfile(join(input_folder_name + "Domains/" + domains[domain_name] + "/", f))]
@@ -46,7 +41,7 @@ def run(plan_recognizer, obs_file_name):
     all_paths = plan_recognizer.apply_hsq()
     all_paths_string = all_paths.__repr__()
     all_paths_string = all_paths_string.replace(',', ',\n')
-    print all_paths_string
+    print all_paths_string, '\n'
 
 
 def read_obs_and_apply_csq(obs_file_name, plan_recognizer):
