@@ -97,3 +97,7 @@ class HSQ(object):
             if new_parent is not None:
                 paths.append(new_parent)
         return paths
+
+    def reset(self):
+        self.path_by_string = {}
+        self.graph  = nx.DiGraph()
